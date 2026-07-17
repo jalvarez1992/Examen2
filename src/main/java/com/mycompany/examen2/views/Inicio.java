@@ -6,6 +6,7 @@ import com.mycompany.examen2.util.ConexionSQLite;
 import com.mycompany.examen2.util.Encriptador;
 import java.io.File;
 import java.nio.file.Files;
+import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -262,7 +263,7 @@ public class Inicio extends javax.swing.JFrame {
         try {
             // 2. Obtener la lista de frases desde la base de datos
             FraseEncriptadaDAO dao = new FraseEncriptadaDAO();
-            java.util.List<FraseEncriptada> lista = dao.obtenerFrases();
+            List<FraseEncriptada> lista = dao.obtenerFrases();
 
             // 3. Obtener el objeto correspondiente a la fila seleccionada
             // Como cargarTabla() y obtenerFrases() siguen el mismo orden, podemos usar el índice
