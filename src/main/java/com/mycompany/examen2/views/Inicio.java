@@ -314,11 +314,16 @@ public class Inicio extends javax.swing.JFrame {
         }
 
         // 2. Pedir confirmación al usuario antes de eliminar (Buena práctica)
-        int confirmacion = JOptionPane.showConfirmDialog(this,
+        Object[] opciones = {"Sí", "No"};
+
+        int confirmacion = JOptionPane.showOptionDialog(this,
                 "¿Estás seguro de que deseas eliminar este registro de la base de datos?",
                 "Confirmar Eliminación",
                 JOptionPane.YES_NO_OPTION,
-                JOptionPane.QUESTION_MESSAGE);
+                JOptionPane.QUESTION_MESSAGE,
+                null, // null para usar el ícono por defecto
+                opciones, // Los títulos de los botones personalizados
+                opciones[0]);   // El botón que estará seleccionado por defecto ("Sí")
 
         // Si el usuario presiona "Sí" (YES_OPTION)
         if (confirmacion == JOptionPane.YES_OPTION) {
