@@ -4,6 +4,7 @@ import com.mycompany.examen2.dao.FraseEncriptadaDAO;
 import com.mycompany.examen2.model.FraseEncriptada;
 import com.mycompany.examen2.util.ConexionSQLite;
 import com.mycompany.examen2.util.Encriptador;
+import java.io.File;
 import java.nio.file.Files;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -197,7 +198,7 @@ public class Inicio extends javax.swing.JFrame {
 
         try {
             // 2. Leer el archivo config.txt desde la raíz del proyecto
-            java.io.File archivoConfig = new java.io.File("config.txt");
+            File archivoConfig = new File("config.txt");
 
             if (!archivoConfig.exists()) {
                 JOptionPane.showMessageDialog(this,
