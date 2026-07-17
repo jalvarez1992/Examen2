@@ -5,12 +5,7 @@ import java.util.Map;
 
 public class Encriptador {
 
-    /**
-     * Metodo interno para convertir el archivo BLOB (byte[]) en un mapa de caracteres.
-     * @param configBytes El archivo de configuracion en bytes.
-     * @param esParaEncriptar true si queremos original->cifrado, false para cifrado->original.
-     * @return Mapa con las equivalencias de caracteres.
-     */
+    //Metodo interno para convertir el archivo BLOB (byte[]) en un mapa de caracteres.
     private static Map<Character, Character> obtenerMapa(byte[] configBytes, boolean esParaEncriptar) {
         Map<Character, Character> mapa = new HashMap<>();
         
@@ -47,9 +42,7 @@ public class Encriptador {
         return mapa;
     }
 
-    /**
-     * Encripta una frase utilizando el archivo de configuracion en formato BLOB.
-     */
+    //Encripta una frase utilizando el archivo de configuracion en formato BLOB.
     public static String encriptar(String textoOriginal, byte[] configBytes) {
         Map<Character, Character> mapa = obtenerMapa(configBytes, true);
         StringBuilder resultado = new StringBuilder();
@@ -63,9 +56,7 @@ public class Encriptador {
         return resultado.toString();
     }
 
-    /**
-     * Desencripta una frase utilizando la configuracion almacenada en la base de datos.
-     */
+    //Desencripta una frase utilizando la configuracion almacenada en la base de datos.
     public static String desencriptar(String textoEncriptado, byte[] configBytes) {
         Map<Character, Character> mapaInverso = obtenerMapa(configBytes, false);
         StringBuilder resultado = new StringBuilder();
